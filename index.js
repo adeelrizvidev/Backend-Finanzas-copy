@@ -15,9 +15,9 @@ var fs = require("fs");
 const dataPath = "./data.json";
 const dataPath1 = "./data1.json";
 
-console.log = function (...args) {
-  logs.push(arg);
-};
+// console.log = function (...args) {
+//   logs.push(args);
+// };
 
 // LOGS
 var logs = [];
