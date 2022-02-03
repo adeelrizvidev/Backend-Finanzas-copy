@@ -7,8 +7,7 @@ async function startBrowser() {
     console.log("Opening the browser......");
     browser = await chromium.puppeteer.launch({
       headless: true,
-      defaultViewport: null,
-      args: ["--incognito", "--no-sandbox", "--single-process", "--no-zygote"],
+      args: ["--no-sandbox"],
       ignoreHTTPSErrors: true,
     });
   } catch (err) {
