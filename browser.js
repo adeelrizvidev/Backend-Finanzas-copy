@@ -7,11 +7,12 @@ async function startBrowser() {
     console.log("Opening the browser......");
     browser = await chromium.puppeteer.launch({
       headless: true,
-      args: ["--no-sandbox"],
+      defaultViewport: null,
+      args: ["--incognito", "--no-sandbox", "--single-process", "--no-zygote"],
       ignoreHTTPSErrors: true,
     });
   } catch (err) {
-    console.log("Could not create a browser instance => : ", err);
+    console.log("Could not create a browser instance => : " + err.message, err);
   }
   return browser;
 }

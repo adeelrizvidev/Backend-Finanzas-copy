@@ -4,24 +4,21 @@ const scraperController = require("./pageController");
 const express = require("express"); // Adding Express
 const app = express(); // Initializing Express
 
-//Start the browser and create a browser instance
+var fs = require("fs");
+
+app.use(express.json());
+
+const logs = [];
+
 let browserInstance = browserObject.startBrowser();
 
-// Pass the browser instance to the scraper controller
 scraperController(browserInstance);
 
 // Api
-var fs = require("fs");
 const dataPath = "./data.json";
 const dataPath1 = "./data1.json";
 
-// console.log = function (...args) {
-//   logs.push(args);
-// };
-
-// LOGS
-var logs = [];
-app.get("/logs", (req, res) => {
+app.get("/adeel", (req, res) => {
   res.send(logs);
 });
 
